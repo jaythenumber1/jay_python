@@ -1,0 +1,22 @@
+from datetime import date
+
+
+def calculate_age(birth_date):
+    today = date.today()
+    age = today.year - birth_date.year - ((today.month , today.day) < (birth_date.month , birth_date.day))
+    return age
+
+
+def main():
+    year = int(input("Enter the year of your birth: "))
+    month = int(input("Enter the month of your birth (1-12): "))
+    day = int(input("Enter the day of your birth: "))
+
+    birth_date = date(year , month , day)
+    age = calculate_age(birth_date)
+
+    print("You are {} years old.".format(age))
+
+
+if __name__ == "__main__":
+    main()
