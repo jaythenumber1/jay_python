@@ -1,6 +1,6 @@
-- 👋 Hi, I’m @jaythenumber1
+- 👋 Hi, I’m @jay_python
 
-i like programing mainly python
+i like python programing
 
 
 
