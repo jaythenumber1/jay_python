@@ -1,0 +1,54 @@
+import turtle
+
+# Function to draw a circle
+def draw_circle(t, x, y, radius, color):
+    t.penup()
+    t.goto(x, y - radius)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.circle(radius)
+    t.end_fill()
+
+# Function to draw an eye
+def draw_eye(t, x, y, radius, color):
+    draw_circle(t, x, y, radius, color)
+    draw_circle(t, x, y + radius / 2, radius / 2, "white")
+
+# Function to draw Goku's face
+def draw_goku_face():
+    screen = turtle.Screen()
+    screen.setup(width=600, height=600)
+    screen.bgcolor("sky blue")
+
+    t = turtle.Turtle()
+    t.speed(0)
+    t.width(2)
+
+    # Draw face
+    draw_circle(t, 0, 0, 100, "orange")
+
+    # Draw eyes
+    draw_eye(t, -40, 30, 15, "black")  # Left eye
+    draw_eye(t, 40, 30, 15, "black")   # Right eye
+
+    # Draw mouth
+    t.penup()
+    t.goto(-30, -20)
+    t.pendown()
+    t.setheading(-60)
+    t.circle(30, 120)
+
+    # Draw nose
+    t.penup()
+    t.goto(0, 10)
+    t.pendown()
+    t.setheading(180)
+    t.circle(-20, 180)
+
+    t.hideturtle()
+    screen.mainloop()
+
+# Main function
+if __name__ == "__main__":
+    draw_goku_face()
