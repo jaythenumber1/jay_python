@@ -3,7 +3,7 @@ import turtle
 # Function to draw a circle
 def draw_circle(t, x, y, radius, color):
     t.penup()
-    t.goto(x, y - radius)
+    t.goto(x, y - radius)  # Adjust y position to start drawing from the bottom
     t.pendown()
     t.fillcolor(color)
     t.begin_fill()
@@ -12,8 +12,8 @@ def draw_circle(t, x, y, radius, color):
 
 # Function to draw an eye
 def draw_eye(t, x, y, radius, color):
-    draw_circle(t, x, y, radius, color)
-    draw_circle(t, x, y + radius / 2, radius / 2, "white")
+    draw_circle(t, x, y, radius, color)  # Draw the main part of the eye
+    draw_circle(t, x, y + radius / 2, radius / 2, "white")  # Draw the highlight
 
 # Function to draw Goku's face
 def draw_goku_face():
@@ -29,22 +29,22 @@ def draw_goku_face():
     draw_circle(t, 0, 0, 100, "orange")
 
     # Draw eyes
-    draw_eye(t, -40, 30, 15, "black")  # Left eye
-    draw_eye(t, 40, 30, 15, "black")   # Right eye
+    draw_eye(t, -40, 50, 15, "black")  # Left eye
+    draw_eye(t, 40, 50, 15, "black")   # Right eye
 
     # Draw mouth
     t.penup()
-    t.goto(-30, -20)
+    t.goto(-30, -40)
     t.pendown()
     t.setheading(-60)
     t.circle(30, 120)
 
     # Draw nose
     t.penup()
-    t.goto(0, 10)
+    t.goto(0, 20)
     t.pendown()
-    t.setheading(180)
-    t.circle(-20, 180)
+    t.setheading(270)
+    t.forward(10)
 
     t.hideturtle()
     screen.mainloop()
@@ -52,3 +52,4 @@ def draw_goku_face():
 # Main function
 if __name__ == "__main__":
     draw_goku_face()
+
